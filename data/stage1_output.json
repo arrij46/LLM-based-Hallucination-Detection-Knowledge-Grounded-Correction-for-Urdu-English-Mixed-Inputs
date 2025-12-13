@@ -1,0 +1,4812 @@
+[
+  {
+    "original_text": "Pakistan ka national animal kya hai?",
+    "normalized_text": "pakistan ka national animal kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁animal",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "original_text": "Pakistan ki independence day kab hai?",
+    "normalized_text": "pakistan ki independence day kab hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ki",
+      "▁in",
+      "dependence",
+      "▁day",
+      "▁kab",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan ka national language kya hai?",
+    "normalized_text": "pakistan ka national language kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁language",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "original_text": "Quaid e Azam ka poora naam kya tha?",
+    "normalized_text": "quaid e azam ka pora naam kya tha?",
+    "tokens": [
+      "▁qua",
+      "id",
+      "▁e",
+      "▁az",
+      "am",
+      "▁ka",
+      "▁por",
+      "a",
+      "▁naam",
+      "▁kya",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      5,
+      6,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan ka national poet kaun hai?",
+    "normalized_text": "pakistan ka national poet kon hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁poet",
+      "▁kon",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan ki national anthem kisne likhi?",
+    "normalized_text": "pakistan ki national anthem kisnay likhi?",
+    "tokens": [
+      "▁pakistan",
+      "▁ki",
+      "▁national",
+      "▁ant",
+      "hem",
+      "▁kis",
+      "nay",
+      "▁li",
+      "khi",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5,
+      6,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan Resolution kab pass hua tha?",
+    "normalized_text": "pakistan resolution kab pas hua tha?",
+    "tokens": [
+      "▁pakistan",
+      "▁resolution",
+      "▁kab",
+      "▁pas",
+      "▁hua",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan mein total kitni languages boli jati hain?",
+    "normalized_text": "pakistan mein total kitni languages boli jate hain?",
+    "tokens": [
+      "▁pakistan",
+      "▁mein",
+      "▁total",
+      "▁kit",
+      "ni",
+      "▁language",
+      "s",
+      "▁boli",
+      "▁ja",
+      "te",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      10
+    ]
+  },
+  {
+    "original_text": "Pakistan ka flag kisne design kiya?",
+    "normalized_text": "pakistan ka flag kisnay design kiya?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁flag",
+      "▁kis",
+      "nay",
+      "▁design",
+      "▁kiya",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      4,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka national flower kya hai?",
+    "normalized_text": "pakistan ka national flower kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁",
+      "flower",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan ka national dress kya hai?",
+    "normalized_text": "pakistan ka national dress kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁dress",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "original_text": "Pakistan ka national game kya hai?",
+    "normalized_text": "pakistan ka national game kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁game",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "original_text": "Pakistan ka national mosque kaun si hai?",
+    "normalized_text": "pakistan ka national mosque kon si hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁mos",
+      "que",
+      "▁kon",
+      "▁si",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka national monument kahan hai?",
+    "normalized_text": "pakistan ka national monument kahan hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁monument",
+      "▁ka",
+      "han",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "original_text": "Pakistan ka first Nobel Prize winner kaun tha?",
+    "normalized_text": "pakistan ka first nobel prize winner kon tha?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁first",
+      "▁no",
+      "bel",
+      "▁pri",
+      "ze",
+      "▁winner",
+      "▁kon",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      9
+    ]
+  },
+  {
+    "original_text": "Edhi Foundation kis ne establish ki?",
+    "normalized_text": "edhi foundation kis ny establish ki?",
+    "tokens": [
+      "▁e",
+      "dhi",
+      "▁foundation",
+      "▁kis",
+      "▁ny",
+      "▁establish",
+      "▁ki",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      6
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla TV channel kaun sa tha?",
+    "normalized_text": "pakistan ka pahla tv channel kon sa tha?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁tv",
+      "▁channel",
+      "▁kon",
+      "▁sa",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      8
+    ]
+  },
+  {
+    "original_text": "PTV kab start hua?",
+    "normalized_text": "ptv kab start hua?",
+    "tokens": [
+      "▁p",
+      "tv",
+      "▁kab",
+      "▁start",
+      "▁hua",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla newspaper kaun sa tha?",
+    "normalized_text": "pakistan ka pahla newspaper kon sa tha?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁newspaper",
+      "▁kon",
+      "▁sa",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "original_text": "Urdu ko national language kab declare kiya gaya?",
+    "normalized_text": "urdu ko national language kab declare kya gaya?",
+    "tokens": [
+      "▁urdu",
+      "▁ko",
+      "▁national",
+      "▁language",
+      "▁kab",
+      "▁declare",
+      "▁kya",
+      "▁gaya",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla radio station kahan bana?",
+    "normalized_text": "pakistan ka pahla radio station kahan bana?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁radio",
+      "▁station",
+      "▁ka",
+      "han",
+      "▁bana",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan ka first airline kaun si thi?",
+    "normalized_text": "pakistan ka first airline kon si thi?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁first",
+      "▁air",
+      "line",
+      "▁kon",
+      "▁si",
+      "▁thi",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "original_text": "PIA kab establish hui?",
+    "normalized_text": "pia kab establish hui?",
+    "tokens": [
+      "▁pia",
+      "▁kab",
+      "▁establish",
+      "▁hui",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "original_text": "Pakistan ka first capital Karachi kab tak raha?",
+    "normalized_text": "pakistan ka first capital karachi kab tak raha?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁first",
+      "▁capital",
+      "▁kara",
+      "chi",
+      "▁kab",
+      "▁tak",
+      "▁raha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla census kab hua?",
+    "normalized_text": "pakistan ka pahla census kab hua?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁censu",
+      "s",
+      "▁kab",
+      "▁hua",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "original_text": "Pakistan ka national library kahan hai?",
+    "normalized_text": "pakistan ka national library kahan hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁libra",
+      "ry",
+      "▁ka",
+      "han",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla university kaun si thi?",
+    "normalized_text": "pakistan ka pahla university kon si thi?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁university",
+      "▁kon",
+      "▁si",
+      "▁thi",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "original_text": "Punjab University kab bani?",
+    "normalized_text": "punjab university kab bani?",
+    "tokens": [
+      "▁pun",
+      "jab",
+      "▁university",
+      "▁kab",
+      "▁bani",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3
+    ]
+  },
+  {
+    "original_text": "Pakistan ka first female PM kaun thi?",
+    "normalized_text": "pakistan ka first female pm kon thi?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁first",
+      "▁female",
+      "▁pm",
+      "▁kon",
+      "▁thi",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla field marshal kaun tha?",
+    "normalized_text": "pakistan ka pahla field marshal kon tha?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁field",
+      "▁mars",
+      "hal",
+      "▁kon",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      8
+    ]
+  },
+  {
+    "original_text": "Pakistan ki GDP growth rate 2024 mein kya hai?",
+    "normalized_text": "pakistan ki gdp growth rate 2024 mein kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ki",
+      "▁g",
+      "d",
+      "p",
+      "▁growth",
+      "▁rate",
+      "▁20",
+      "24",
+      "▁mein",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka currency kya hai?",
+    "normalized_text": "pakistan ka currency kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁currency",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "original_text": "Rupee ka exchange rate dollar ke sath kya hai?",
+    "normalized_text": "rupee ka exchange rate dollar ke saath kya hai?",
+    "tokens": [
+      "▁rupe",
+      "e",
+      "▁ka",
+      "▁exchange",
+      "▁rate",
+      "▁dollar",
+      "▁ke",
+      "▁saat",
+      "h",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan mein inflation rate kitna hai?",
+    "normalized_text": "pakistan mein inflation rate kitna hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁mein",
+      "▁infla",
+      "tion",
+      "▁rate",
+      "▁kit",
+      "na",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "original_text": "CPEC project kab shuru hua tha?",
+    "normalized_text": "cpec project kab shuro hua tha?",
+    "tokens": [
+      "▁c",
+      "pec",
+      "▁project",
+      "▁kab",
+      "▁shu",
+      "ro",
+      "▁hua",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka main export kya hai?",
+    "normalized_text": "pakistan ka main export kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁main",
+      "▁export",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "original_text": "State Bank of Pakistan kab establish hua?",
+    "normalized_text": "state bank of pakistan kab establish hua?",
+    "tokens": [
+      "▁state",
+      "▁bank",
+      "▁of",
+      "▁pakistan",
+      "▁kab",
+      "▁establish",
+      "▁hua",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka debt to GDP ratio kya hai?",
+    "normalized_text": "pakistan ka debt to gdp ratio kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁debt",
+      "▁to",
+      "▁g",
+      "d",
+      "p",
+      "▁ratio",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      8
+    ]
+  },
+  {
+    "original_text": "IMF se Pakistan ne kitna loan liya hai?",
+    "normalized_text": "imf se pakistan ny kitna loan liya hai?",
+    "tokens": [
+      "▁im",
+      "f",
+      "▁se",
+      "▁pakistan",
+      "▁ny",
+      "▁kit",
+      "na",
+      "▁loan",
+      "▁liya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan ki per capita income kitni hai?",
+    "normalized_text": "pakistan ki per capita income kitni hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ki",
+      "▁per",
+      "▁capita",
+      "▁income",
+      "▁kit",
+      "ni",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka fiscal year kab start hota hai?",
+    "normalized_text": "pakistan ka fiscal year kab start hota hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁fiscal",
+      "▁year",
+      "▁kab",
+      "▁start",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4,
+      5,
+      7
+    ]
+  },
+  {
+    "original_text": "Budget ka announcement kab hota hai?",
+    "normalized_text": "budget ka announcement kab hota hai?",
+    "tokens": [
+      "▁budget",
+      "▁ka",
+      "▁ann",
+      "ounce",
+      "ment",
+      "▁kab",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka largest export partner kaun hai?",
+    "normalized_text": "pakistan ka largest export partner kon hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁largest",
+      "▁export",
+      "▁partner",
+      "▁kon",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6
+    ]
+  },
+  {
+    "original_text": "Textile industry ka share GDP mein kitna hai?",
+    "normalized_text": "textile industry ka share gdp mein kitna hai?",
+    "tokens": [
+      "▁textil",
+      "e",
+      "▁industry",
+      "▁ka",
+      "▁share",
+      "▁g",
+      "d",
+      "p",
+      "▁mein",
+      "▁kit",
+      "na",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      8,
+      9,
+      11
+    ]
+  },
+  {
+    "original_text": "Remittances ka major source kaun se mulk hain?",
+    "normalized_text": "remittances ka major source kon se mulk hain?",
+    "tokens": [
+      "▁remit",
+      "t",
+      "ances",
+      "▁ka",
+      "▁major",
+      "▁source",
+      "▁kon",
+      "▁se",
+      "▁mul",
+      "k",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "original_text": "SBP ka governor kaun hota hai?",
+    "normalized_text": "sbp ka governor kon hota hai?",
+    "tokens": [
+      "▁s",
+      "b",
+      "p",
+      "▁ka",
+      "▁governo",
+      "r",
+      "▁kon",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      8
+    ]
+  },
+  {
+    "original_text": "Pakistan ka largest import item kya hai?",
+    "normalized_text": "pakistan ka largest import item kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁largest",
+      "▁import",
+      "▁item",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5
+    ]
+  },
+  {
+    "original_text": "Trade deficit kya hota hai?",
+    "normalized_text": "trade deficit kya hota hai?",
+    "tokens": [
+      "▁trade",
+      "▁deficit",
+      "▁kya",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "original_text": "Current account deficit kya hai?",
+    "normalized_text": "current account deficit kya hai?",
+    "tokens": [
+      "▁current",
+      "▁account",
+      "▁deficit",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3
+    ]
+  },
+  {
+    "original_text": "Pakistan ka tax to GDP ratio kitna hai?",
+    "normalized_text": "pakistan ka tax to gdp ratio kitna hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁tax",
+      "▁to",
+      "▁g",
+      "d",
+      "p",
+      "▁ratio",
+      "▁kit",
+      "na",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      10
+    ]
+  },
+  {
+    "original_text": "FBR ka full form kya hai?",
+    "normalized_text": "fbr ka full form kya hai?",
+    "tokens": [
+      "▁f",
+      "br",
+      "▁ka",
+      "▁full",
+      "▁form",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "original_text": "Benazir Income Support Program ka purpose kya hai?",
+    "normalized_text": "benazir income support program ka purpose kya hai?",
+    "tokens": [
+      "▁be",
+      "na",
+      "zir",
+      "▁income",
+      "▁support",
+      "▁program",
+      "▁ka",
+      "▁purpose",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "original_text": "Ehsaas program kab start hua?",
+    "normalized_text": "ehsaas program kab start hua?",
+    "tokens": [
+      "▁eh",
+      "sa",
+      "as",
+      "▁program",
+      "▁kab",
+      "▁start",
+      "▁hua",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      7
+    ]
+  },
+  {
+    "original_text": "CPEC ke major projects kaun se hain?",
+    "normalized_text": "cpec ke major projects kon se hain?",
+    "tokens": [
+      "▁c",
+      "pec",
+      "▁ke",
+      "▁major",
+      "▁projects",
+      "▁kon",
+      "▁se",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      6
+    ]
+  },
+  {
+    "original_text": "Pakistan ki energy crisis kyun hoti hai?",
+    "normalized_text": "pakistan ki energy crisis kyun hoti hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ki",
+      "▁energy",
+      "▁crisis",
+      "▁ky",
+      "un",
+      "▁ho",
+      "ti",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      8
+    ]
+  },
+  {
+    "original_text": "Pakistan ka largest dam power generation kitna hai?",
+    "normalized_text": "pakistan ka largest dam power generation kitna hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁largest",
+      "▁dam",
+      "▁power",
+      "▁generation",
+      "▁kit",
+      "na",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      8
+    ]
+  },
+  {
+    "original_text": "Circular debt kya hota hai?",
+    "normalized_text": "circular debt kya hota hai?",
+    "tokens": [
+      "▁circular",
+      "▁debt",
+      "▁kya",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "original_text": "IMF program ka duration kya hota hai?",
+    "normalized_text": "imf program ka duration kya hota hai?",
+    "tokens": [
+      "▁im",
+      "f",
+      "▁program",
+      "▁ka",
+      "▁du",
+      "ration",
+      "▁kya",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "original_text": "Export processing zones kya hote hain?",
+    "normalized_text": "export processing zones kya hoti hain?",
+    "tokens": [
+      "▁export",
+      "▁process",
+      "ing",
+      "▁zones",
+      "▁kya",
+      "▁ho",
+      "ti",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka economic capital kaun sa shehar hai?",
+    "normalized_text": "pakistan ka economic capital kon sa shehar hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁economic",
+      "▁capital",
+      "▁kon",
+      "▁sa",
+      "▁she",
+      "har",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      8
+    ]
+  },
+  {
+    "original_text": "Pakistan ne kitni baar World Cup jeeta hai cricket mein?",
+    "normalized_text": "pakistan ny kitni baar world cup jeeta hai cricket mein?",
+    "tokens": [
+      "▁pakistan",
+      "▁ny",
+      "▁kit",
+      "ni",
+      "▁baar",
+      "▁world",
+      "▁cup",
+      "▁je",
+      "eta",
+      "▁hai",
+      "▁cri",
+      "cket",
+      "▁mein",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      9,
+      10,
+      12
+    ]
+  },
+  {
+    "original_text": "Babar Azam kis team ka captain hai?",
+    "normalized_text": "babar azam kis team ka captain hai?",
+    "tokens": [
+      "▁baba",
+      "r",
+      "▁az",
+      "am",
+      "▁kis",
+      "▁team",
+      "▁ka",
+      "▁capta",
+      "in",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "original_text": "Shaheen Afridi ki bowling speed kitni hai?",
+    "normalized_text": "shaheen afridi ki bowling speed kitni hai?",
+    "tokens": [
+      "▁sha",
+      "heen",
+      "▁a",
+      "fri",
+      "di",
+      "▁ki",
+      "▁bowl",
+      "ing",
+      "▁speed",
+      "▁kit",
+      "ni",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      5,
+      6,
+      11
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla Test match kab khela tha?",
+    "normalized_text": "pakistan ka pahla test match kab khela tha?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁test",
+      "▁match",
+      "▁kab",
+      "▁khe",
+      "la",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "original_text": "Wasim Akram ne kitne wickets liye international cricket mein?",
+    "normalized_text": "wasim akram ny kitni wickets liye international cricket mein?",
+    "tokens": [
+      "▁was",
+      "im",
+      "▁a",
+      "kram",
+      "▁ny",
+      "▁kit",
+      "ni",
+      "▁",
+      "wick",
+      "ets",
+      "▁liye",
+      "▁international",
+      "▁cri",
+      "cket",
+      "▁mein",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      7,
+      8,
+      14
+    ]
+  },
+  {
+    "original_text": "Jahangir Khan squash mein kitni baar world champion bane?",
+    "normalized_text": "jahangir khan squash mein kitni baar world champion bane?",
+    "tokens": [
+      "▁ja",
+      "hang",
+      "ir",
+      "▁khan",
+      "▁squash",
+      "▁mein",
+      "▁kit",
+      "ni",
+      "▁baar",
+      "▁world",
+      "▁champion",
+      "▁bane",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      5,
+      6,
+      11
+    ]
+  },
+  {
+    "original_text": "Hockey mein Pakistan ne kitne Olympic gold jeete hain?",
+    "normalized_text": "hockey mein pakistan ny kitni olympic gold jeete hain?",
+    "tokens": [
+      "▁",
+      "hockey",
+      "▁mein",
+      "▁pakistan",
+      "▁ny",
+      "▁kit",
+      "ni",
+      "▁olymp",
+      "ic",
+      "▁gold",
+      "▁je",
+      "ete",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      12
+    ]
+  },
+  {
+    "original_text": "PSL kab shuru hui thi?",
+    "normalized_text": "psl kab shuro hui thi?",
+    "tokens": [
+      "▁ps",
+      "l",
+      "▁kab",
+      "▁shu",
+      "ro",
+      "▁hui",
+      "▁thi",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      6
+    ]
+  },
+  {
+    "original_text": "Arshad Nadeem ka sport kya hai?",
+    "normalized_text": "arshad nadeem ka sport kya hai?",
+    "tokens": [
+      "▁ar",
+      "shad",
+      "▁na",
+      "de",
+      "em",
+      "▁ka",
+      "▁sport",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan cricket team ki ODI ranking kya hai?",
+    "normalized_text": "pakistan cricket team ki odi ranking kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁cri",
+      "cket",
+      "▁team",
+      "▁ki",
+      "▁od",
+      "i",
+      "▁ranking",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      8
+    ]
+  },
+  {
+    "original_text": "Pakistan ka national sport kya hai?",
+    "normalized_text": "pakistan ka national sport kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁national",
+      "▁sport",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "original_text": "Squash mein Pakistan ka mashhoor khiladi kaun tha?",
+    "normalized_text": "squash mein pakistan ka mashahoor khilari kon tha?",
+    "tokens": [
+      "▁squash",
+      "▁mein",
+      "▁pakistan",
+      "▁ka",
+      "▁mas",
+      "ha",
+      "hoor",
+      "▁khi",
+      "lari",
+      "▁kon",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      4,
+      10
+    ]
+  },
+  {
+    "original_text": "Cricket World Cup 1992 ka captain kaun tha?",
+    "normalized_text": "cricket world cup 1992 ka captain kon tha?",
+    "tokens": [
+      "▁cri",
+      "cket",
+      "▁world",
+      "▁cup",
+      "▁1992",
+      "▁ka",
+      "▁capta",
+      "in",
+      "▁kon",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      6,
+      9
+    ]
+  },
+  {
+    "original_text": "PCB kab establish hua?",
+    "normalized_text": "pcb kab establish hua?",
+    "tokens": [
+      "▁pc",
+      "b",
+      "▁kab",
+      "▁establish",
+      "▁hua",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan ne T20 World Cup kab jeeta?",
+    "normalized_text": "pakistan ny t20 world cup kab jeeta?",
+    "tokens": [
+      "▁pakistan",
+      "▁ny",
+      "▁t",
+      "20",
+      "▁world",
+      "▁cup",
+      "▁kab",
+      "▁je",
+      "eta",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "original_text": "PSL ki pehli winning team kaun si thi?",
+    "normalized_text": "psl ki pehli winning team kon si thi?",
+    "tokens": [
+      "▁ps",
+      "l",
+      "▁ki",
+      "▁pe",
+      "hli",
+      "▁",
+      "winning",
+      "▁team",
+      "▁kon",
+      "▁si",
+      "▁thi",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5,
+      6,
+      10
+    ]
+  },
+  {
+    "original_text": "Pakistan hockey team ki golden era kab tha?",
+    "normalized_text": "pakistan hockey team ki golden era kab tha?",
+    "tokens": [
+      "▁pakistan",
+      "▁",
+      "hockey",
+      "▁team",
+      "▁ki",
+      "▁golden",
+      "▁era",
+      "▁kab",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4,
+      5,
+      7
+    ]
+  },
+  {
+    "original_text": "Olympics mein Pakistan ne kitne medals jeete?",
+    "normalized_text": "olympics mein pakistan ny kitni medals jeete?",
+    "tokens": [
+      "▁olymp",
+      "ics",
+      "▁mein",
+      "▁pakistan",
+      "▁ny",
+      "▁kit",
+      "ni",
+      "▁medal",
+      "s",
+      "▁je",
+      "ete",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      11
+    ]
+  },
+  {
+    "original_text": "Test cricket ka pehla captain kaun tha Pakistan ka?",
+    "normalized_text": "test cricket ka pahla captain kon tha pakistan ka?",
+    "tokens": [
+      "▁test",
+      "▁cri",
+      "cket",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁capta",
+      "in",
+      "▁kon",
+      "▁tha",
+      "▁pakistan",
+      "▁ka",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      9,
+      10,
+      11
+    ]
+  },
+  {
+    "original_text": "Asia Cup mein Pakistan ne kitni baar jeeta?",
+    "normalized_text": "asia cup mein pakistan ny kitni baar jeeta?",
+    "tokens": [
+      "▁asia",
+      "▁cup",
+      "▁mein",
+      "▁pakistan",
+      "▁ny",
+      "▁kit",
+      "ni",
+      "▁baar",
+      "▁je",
+      "eta",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      10
+    ]
+  },
+  {
+    "original_text": "Babar Azam ka debut kab hua?",
+    "normalized_text": "babar azam ka debut kab hua?",
+    "tokens": [
+      "▁baba",
+      "r",
+      "▁az",
+      "am",
+      "▁ka",
+      "▁debut",
+      "▁kab",
+      "▁hua",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "original_text": "Shaheen Afridi ka ODI debut kab hua?",
+    "normalized_text": "shaheen afridi ka odi debut kab hua?",
+    "tokens": [
+      "▁sha",
+      "heen",
+      "▁a",
+      "fri",
+      "di",
+      "▁ka",
+      "▁od",
+      "i",
+      "▁debut",
+      "▁kab",
+      "▁hua",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      5,
+      6,
+      9,
+      10,
+      11
+    ]
+  },
+  {
+    "original_text": "Wasim Akram kis bowling style ke liye famous hain?",
+    "normalized_text": "wasim akram kis bowling style ke liye famous hain?",
+    "tokens": [
+      "▁was",
+      "im",
+      "▁a",
+      "kram",
+      "▁kis",
+      "▁bowl",
+      "ing",
+      "▁style",
+      "▁ke",
+      "▁liye",
+      "▁famous",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      11
+    ]
+  },
+  {
+    "original_text": "Jahangir Khan ka world ranking streak kya tha?",
+    "normalized_text": "jahangir khan ka world ranking streak kya tha?",
+    "tokens": [
+      "▁ja",
+      "hang",
+      "ir",
+      "▁khan",
+      "▁ka",
+      "▁world",
+      "▁ranking",
+      "▁stre",
+      "ak",
+      "▁kya",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla Olympic medal kab aya?",
+    "normalized_text": "pakistan ka pahla olympic medal kab aya?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁olymp",
+      "ic",
+      "▁medal",
+      "▁kab",
+      "▁aya",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7,
+      8,
+      9
+    ]
+  },
+  {
+    "original_text": "Arshad Nadeem ne Olympic medal jeeta ya nahi?",
+    "normalized_text": "arshad nadeem ny olympic medal jeeta ya nahi?",
+    "tokens": [
+      "▁ar",
+      "shad",
+      "▁na",
+      "de",
+      "em",
+      "▁ny",
+      "▁olymp",
+      "ic",
+      "▁medal",
+      "▁je",
+      "eta",
+      "▁ya",
+      "▁nahi",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      13
+    ]
+  },
+  {
+    "original_text": "PSL teams kitni hain?",
+    "normalized_text": "psl teams kitni hain?",
+    "tokens": [
+      "▁ps",
+      "l",
+      "▁teams",
+      "▁kit",
+      "ni",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan Super League ka format kya hai?",
+    "normalized_text": "pakistan super league ka format kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁super",
+      "▁league",
+      "▁ka",
+      "▁format",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "original_text": "Cricket ka national stadium kahan hai?",
+    "normalized_text": "cricket ka national stadium kahan hai?",
+    "tokens": [
+      "▁cri",
+      "cket",
+      "▁ka",
+      "▁national",
+      "▁stadium",
+      "▁ka",
+      "han",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka home ground kaun sa hai cricket mein?",
+    "normalized_text": "pakistan ka home ground kon sa hai cricket mein?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁home",
+      "▁ground",
+      "▁kon",
+      "▁sa",
+      "▁hai",
+      "▁cri",
+      "cket",
+      "▁mein",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan ki capital kya hai?",
+    "normalized_text": "pakistan ki capital kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ki",
+      "▁capital",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "original_text": "Lahore kis province mein hai?",
+    "normalized_text": "lahore kis province mein hai?",
+    "tokens": [
+      "▁la",
+      "hore",
+      "▁kis",
+      "▁province",
+      "▁mein",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "original_text": "Karachi ki population kitni hai?",
+    "normalized_text": "karachi ki population kitni hai?",
+    "tokens": [
+      "▁kara",
+      "chi",
+      "▁ki",
+      "▁population",
+      "▁kit",
+      "ni",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      6
+    ]
+  },
+  {
+    "original_text": "Pakistan mein kitne provinces hain?",
+    "normalized_text": "pakistan mein kitni provinces hain?",
+    "tokens": [
+      "▁pakistan",
+      "▁mein",
+      "▁kit",
+      "ni",
+      "▁province",
+      "s",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6
+    ]
+  },
+  {
+    "original_text": "K2 mountain ki height kitni hai?",
+    "normalized_text": "k2 mountain ki height kitni hai?",
+    "tokens": [
+      "▁k",
+      "2",
+      "▁mountain",
+      "▁ki",
+      "▁height",
+      "▁kit",
+      "ni",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      4,
+      7
+    ]
+  },
+  {
+    "original_text": "Islamabad kab capital bana tha?",
+    "normalized_text": "islamabad kab capital bana tha?",
+    "tokens": [
+      "▁islam",
+      "abad",
+      "▁kab",
+      "▁capital",
+      "▁bana",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan ka sab se bara shehar kaun sa hai?",
+    "normalized_text": "pakistan ka sab se bara shehar kon sa hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁sab",
+      "▁se",
+      "▁bara",
+      "▁she",
+      "har",
+      "▁kon",
+      "▁sa",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ]
+  },
+  {
+    "original_text": "Gilgit Baltistan kis region mein hai?",
+    "normalized_text": "gilgit baltistan kis region mein hai?",
+    "tokens": [
+      "▁",
+      "gil",
+      "git",
+      "▁bal",
+      "ti",
+      "stan",
+      "▁kis",
+      "▁region",
+      "▁mein",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "original_text": "Indus River kitni lambi hai?",
+    "normalized_text": "indus river kitni lambi hai?",
+    "tokens": [
+      "▁in",
+      "dus",
+      "▁river",
+      "▁kit",
+      "ni",
+      "▁la",
+      "mbi",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      7
+    ]
+  },
+  {
+    "original_text": "Quetta kis province ki capital hai?",
+    "normalized_text": "quetta kis province ki capital hai?",
+    "tokens": [
+      "▁que",
+      "tta",
+      "▁kis",
+      "▁province",
+      "▁ki",
+      "▁capital",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "original_text": "Pakistan ka sab se chota province kaun sa hai?",
+    "normalized_text": "pakistan ka sab se chota province kon sa hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁sab",
+      "▁se",
+      "▁cho",
+      "ta",
+      "▁province",
+      "▁kon",
+      "▁sa",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      4,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan ka eastern border kis mulk se lagta hai?",
+    "normalized_text": "pakistan ka eastern border kis mulk se lagta hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁ea",
+      "stern",
+      "▁border",
+      "▁kis",
+      "▁mul",
+      "k",
+      "▁se",
+      "▁lagt",
+      "a",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5,
+      6,
+      8,
+      9,
+      11
+    ]
+  },
+  {
+    "original_text": "Pakistan ka western border kis mulk se lagta hai?",
+    "normalized_text": "pakistan ka western border kis mulk se lagta hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁western",
+      "▁border",
+      "▁kis",
+      "▁mul",
+      "k",
+      "▁se",
+      "▁lagt",
+      "a",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "original_text": "Arab Sea Pakistan ke kis side par hai?",
+    "normalized_text": "arab sea pakistan ke kis side par hai?",
+    "tokens": [
+      "▁arab",
+      "▁sea",
+      "▁pakistan",
+      "▁ke",
+      "▁kis",
+      "▁side",
+      "▁par",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "original_text": "Pakistan ka highest plateau kaun sa hai?",
+    "normalized_text": "pakistan ka highest plateau kon sa hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁highest",
+      "▁plate",
+      "au",
+      "▁kon",
+      "▁sa",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7
+    ]
+  },
+  {
+    "original_text": "Thar Desert kis province mein hai?",
+    "normalized_text": "thar desert kis province mein hai?",
+    "tokens": [
+      "▁thar",
+      "▁desert",
+      "▁kis",
+      "▁province",
+      "▁mein",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "original_text": "Salt Range kahan located hai?",
+    "normalized_text": "salt range kahan located hai?",
+    "tokens": [
+      "▁salt",
+      "▁range",
+      "▁ka",
+      "han",
+      "▁located",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan ka climate kis type ka hai?",
+    "normalized_text": "pakistan ka climate kis type ka hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁climate",
+      "▁kis",
+      "▁type",
+      "▁ka",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "original_text": "Monsoon season kab hota hai Pakistan mein?",
+    "normalized_text": "monsoon season kab hota hai pakistan mein?",
+    "tokens": [
+      "▁mon",
+      "soon",
+      "▁season",
+      "▁kab",
+      "▁hota",
+      "▁hai",
+      "▁pakistan",
+      "▁mein",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka sab se bara dam kaun sa hai?",
+    "normalized_text": "pakistan ka sab se bara dam kon sa hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁sab",
+      "▁se",
+      "▁bara",
+      "▁dam",
+      "▁kon",
+      "▁sa",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      4,
+      8
+    ]
+  },
+  {
+    "original_text": "Tarbela Dam kis river par bana hai?",
+    "normalized_text": "tarbela dam kis river par bana hai?",
+    "tokens": [
+      "▁tar",
+      "bela",
+      "▁dam",
+      "▁kis",
+      "▁river",
+      "▁par",
+      "▁bana",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "original_text": "Mangla Dam kis province mein hai?",
+    "normalized_text": "mangla dam kis province mein hai?",
+    "tokens": [
+      "▁mang",
+      "la",
+      "▁dam",
+      "▁kis",
+      "▁province",
+      "▁mein",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "original_text": "Hunza Valley kis area mein hai?",
+    "normalized_text": "hunza valley kis area mein hai?",
+    "tokens": [
+      "▁hun",
+      "za",
+      "▁valle",
+      "y",
+      "▁kis",
+      "▁area",
+      "▁mein",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "original_text": "Swat Valley kis province mein hai?",
+    "normalized_text": "swat valley kis province mein hai?",
+    "tokens": [
+      "▁s",
+      "wat",
+      "▁valle",
+      "y",
+      "▁kis",
+      "▁province",
+      "▁mein",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "original_text": "Pakistan ka latitude kya hai?",
+    "normalized_text": "pakistan ka latitude kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁la",
+      "titude",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "original_text": "Pakistan ka longitude kya hai?",
+    "normalized_text": "pakistan ka longitude kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁longitud",
+      "e",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      4
+    ]
+  },
+  {
+    "original_text": "Makran coast kis province mein hai?",
+    "normalized_text": "makran coast kis province mein hai?",
+    "tokens": [
+      "▁ma",
+      "kran",
+      "▁coast",
+      "▁kis",
+      "▁province",
+      "▁mein",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan ka sab se bara lake kaun sa hai?",
+    "normalized_text": "pakistan ka sab se bara lake kon sa hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁sab",
+      "▁se",
+      "▁bara",
+      "▁lake",
+      "▁kon",
+      "▁sa",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      3,
+      4,
+      8
+    ]
+  },
+  {
+    "original_text": "Manchar Lake kahan hai?",
+    "normalized_text": "manchar lake kahan hai?",
+    "tokens": [
+      "▁man",
+      "char",
+      "▁lake",
+      "▁ka",
+      "han",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan ka total area kitna hai?",
+    "normalized_text": "pakistan ka total area kitna hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁total",
+      "▁area",
+      "▁kit",
+      "na",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6
+    ]
+  },
+  {
+    "original_text": "Imran Khan kab PM bane thay?",
+    "normalized_text": "imran khan kab pm bane thay?",
+    "tokens": [
+      "▁im",
+      "ran",
+      "▁khan",
+      "▁kab",
+      "▁pm",
+      "▁bane",
+      "▁thay",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "original_text": "Pakistan ka current PM kaun hai?",
+    "normalized_text": "pakistan ka current pm kon hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁current",
+      "▁pm",
+      "▁kon",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5
+    ]
+  },
+  {
+    "original_text": "PTI party kab bani thi?",
+    "normalized_text": "pti party kab bani thi?",
+    "tokens": [
+      "▁",
+      "pti",
+      "▁party",
+      "▁kab",
+      "▁bani",
+      "▁thi",
+      "?"
+    ],
+    "language_tags": [
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      3
+    ]
+  },
+  {
+    "original_text": "Benazir Bhutto kitni baar PM bani thi?",
+    "normalized_text": "benazir bhutto kitni baar pm bani thi?",
+    "tokens": [
+      "▁be",
+      "na",
+      "zir",
+      "▁bhu",
+      "tto",
+      "▁kit",
+      "ni",
+      "▁baar",
+      "▁pm",
+      "▁bani",
+      "▁thi",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      9
+    ]
+  },
+  {
+    "original_text": "Nawaz Sharif kis party se belong karte hain?",
+    "normalized_text": "nawaz shareef kis party se belong karti hain?",
+    "tokens": [
+      "▁na",
+      "waz",
+      "▁share",
+      "ef",
+      "▁kis",
+      "▁party",
+      "▁se",
+      "▁be",
+      "long",
+      "▁karti",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      6,
+      7,
+      10
+    ]
+  },
+  {
+    "original_text": "Pervez Musharraf kitne saal President rahe?",
+    "normalized_text": "pervez musharraf kitni saal president rahe?",
+    "tokens": [
+      "▁per",
+      "vez",
+      "▁mush",
+      "ar",
+      "raf",
+      "▁kit",
+      "ni",
+      "▁sa",
+      "al",
+      "▁president",
+      "▁rahe",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      11
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla PM kaun tha?",
+    "normalized_text": "pakistan ka pahla pm kon tha?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁pm",
+      "▁kon",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6
+    ]
+  },
+  {
+    "original_text": "Shehbaz Sharif kab PM bane?",
+    "normalized_text": "shehbaz shareef kab pm bane?",
+    "tokens": [
+      "▁she",
+      "h",
+      "baz",
+      "▁share",
+      "ef",
+      "▁kab",
+      "▁pm",
+      "▁bane",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "original_text": "Zardari kitne saal President rahe?",
+    "normalized_text": "zardari kitni saal president rahe?",
+    "tokens": [
+      "▁zar",
+      "dari",
+      "▁kit",
+      "ni",
+      "▁sa",
+      "al",
+      "▁president",
+      "▁rahe",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      8
+    ]
+  },
+  {
+    "original_text": "Liaquat Ali Khan kab shaheed huay?",
+    "normalized_text": "liaquat ali khan kab shaheed huay?",
+    "tokens": [
+      "▁lia",
+      "quat",
+      "▁ali",
+      "▁khan",
+      "▁kab",
+      "▁sha",
+      "heed",
+      "▁hua",
+      "y",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      9
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla constitution kab bana?",
+    "normalized_text": "pakistan ka pahla constitution kab bana?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁constitution",
+      "▁kab",
+      "▁bana",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "original_text": "National Assembly ke total members kitne hain?",
+    "normalized_text": "national assembly ke total members kitni hain?",
+    "tokens": [
+      "▁national",
+      "▁a",
+      "ssem",
+      "bly",
+      "▁ke",
+      "▁total",
+      "▁members",
+      "▁kit",
+      "ni",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      9
+    ]
+  },
+  {
+    "original_text": "Senate ke elections kitne saal baad hote hain?",
+    "normalized_text": "senate ke elections kitni saal bad hoti hain?",
+    "tokens": [
+      "▁sen",
+      "ate",
+      "▁ke",
+      "▁election",
+      "s",
+      "▁kit",
+      "ni",
+      "▁sa",
+      "al",
+      "▁bad",
+      "▁ho",
+      "ti",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      12
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla President kaun tha?",
+    "normalized_text": "pakistan ka pahla president kon tha?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁president",
+      "▁kon",
+      "▁tha",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6
+    ]
+  },
+  {
+    "original_text": "PPP party kab establish hui?",
+    "normalized_text": "ppp party kab establish hui?",
+    "tokens": [
+      "▁p",
+      "pp",
+      "▁party",
+      "▁kab",
+      "▁establish",
+      "▁hui",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      6
+    ]
+  },
+  {
+    "original_text": "MQM kis shehar se start hui?",
+    "normalized_text": "mqm kis shehar se start hui?",
+    "tokens": [
+      "▁mq",
+      "m",
+      "▁kis",
+      "▁she",
+      "har",
+      "▁se",
+      "▁start",
+      "▁hui",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5,
+      6,
+      8
+    ]
+  },
+  {
+    "original_text": "18th amendment kab pass hui?",
+    "normalized_text": "18th amendment kab pas hui?",
+    "tokens": [
+      "▁18",
+      "th",
+      "▁a",
+      "mend",
+      "ment",
+      "▁kab",
+      "▁pas",
+      "▁hui",
+      "?"
+    ],
+    "language_tags": [
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      5,
+      6,
+      8
+    ]
+  },
+  {
+    "original_text": "Pakistan ka pehla martial law kab laga?",
+    "normalized_text": "pakistan ka pahla martial law kab laga?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁pa",
+      "hla",
+      "▁marti",
+      "al",
+      "▁law",
+      "▁kab",
+      "▁laga",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      7,
+      8,
+      9
+    ]
+  },
+  {
+    "original_text": "Caretaker government ka role kya hota hai?",
+    "normalized_text": "caretaker government ka role kya hota hai?",
+    "tokens": [
+      "▁care",
+      "tak",
+      "er",
+      "▁government",
+      "▁ka",
+      "▁role",
+      "▁kya",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "original_text": "Election Commission of Pakistan kab bana?",
+    "normalized_text": "election commission of pakistan kab bana?",
+    "tokens": [
+      "▁election",
+      "▁commission",
+      "▁of",
+      "▁pakistan",
+      "▁kab",
+      "▁bana",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur"
+    ],
+    "code_switch_points": [
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "original_text": "Pakistan ka voting age kya hai?",
+    "normalized_text": "pakistan ka voting age kya hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁vot",
+      "ing",
+      "▁age",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5
+    ]
+  },
+  {
+    "original_text": "Prime Minister ka tenure kitna hota hai?",
+    "normalized_text": "prime minister ka tenure kitna hota hai?",
+    "tokens": [
+      "▁prime",
+      "▁minister",
+      "▁ka",
+      "▁ten",
+      "ure",
+      "▁kit",
+      "na",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      8
+    ]
+  },
+  {
+    "original_text": "President ka election kaise hota hai?",
+    "normalized_text": "president ka election kaise hota hai?",
+    "tokens": [
+      "▁president",
+      "▁ka",
+      "▁election",
+      "▁kaise",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      5
+    ]
+  },
+  {
+    "original_text": "Punjab ka current CM kaun hai?",
+    "normalized_text": "punjab ka current cm kon hai?",
+    "tokens": [
+      "▁pun",
+      "jab",
+      "▁ka",
+      "▁current",
+      "▁cm",
+      "▁kon",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      6
+    ]
+  },
+  {
+    "original_text": "Sindh ka current CM kaun hai?",
+    "normalized_text": "sindh ka current cm kon hai?",
+    "tokens": [
+      "▁sind",
+      "h",
+      "▁ka",
+      "▁current",
+      "▁cm",
+      "▁kon",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      6
+    ]
+  },
+  {
+    "original_text": "Balochistan ka CM kaun hota hai?",
+    "normalized_text": "balochistan ka cm kon hota hai?",
+    "tokens": [
+      "▁bal",
+      "och",
+      "istan",
+      "▁ka",
+      "▁cm",
+      "▁kon",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      7
+    ]
+  },
+  {
+    "original_text": "KPK ka CM kaun hai?",
+    "normalized_text": "kpk ka cm kon hai?",
+    "tokens": [
+      "▁k",
+      "pk",
+      "▁ka",
+      "▁cm",
+      "▁kon",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "ur",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      2,
+      3,
+      5
+    ]
+  },
+  {
+    "original_text": "Pakistan mein total political parties kitni registered hain?",
+    "normalized_text": "pakistan mein total political parties kitni registered hain?",
+    "tokens": [
+      "▁pakistan",
+      "▁mein",
+      "▁total",
+      "▁political",
+      "▁parties",
+      "▁kit",
+      "ni",
+      "▁registered",
+      "▁hain",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      8
+    ]
+  },
+  {
+    "original_text": "Pakistan ka foreign minister kaun hota hai?",
+    "normalized_text": "pakistan ka foreign minister kon hota hai?",
+    "tokens": [
+      "▁pakistan",
+      "▁ka",
+      "▁foreign",
+      "▁minister",
+      "▁kon",
+      "▁hota",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "ur",
+      "en",
+      "en",
+      "en",
+      "en",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      1,
+      2,
+      6
+    ]
+  },
+  {
+    "original_text": "National Security Council ka role kya hai?",
+    "normalized_text": "national security council ka role kya hai?",
+    "tokens": [
+      "▁national",
+      "▁security",
+      "▁council",
+      "▁ka",
+      "▁role",
+      "▁kya",
+      "▁hai",
+      "?"
+    ],
+    "language_tags": [
+      "en",
+      "en",
+      "en",
+      "ur",
+      "en",
+      "ur",
+      "ur",
+      "ur"
+    ],
+    "code_switch_points": [
+      3,
+      4,
+      5
+    ]
+  }
+]
