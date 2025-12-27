@@ -1,20 +1,30 @@
 import json
 import os
+import re
 from itertools import combinations
 
 # Paths
-INPUT_ENTITIES_FILE = "./entities/english/entities.json"
-INPUT_SENTENCES_FILE = "./entities/english/all_entities.json"
-OUTPUT_DIR = "./entities/english/"
+INPUT_ENTITIES_FILE = "./entities/entities.json"
+INPUT_SENTENCES_FILE = "./entities/all_entities.json"
+OUTPUT_DIR = "./entities"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+def clean_entity_id(id_str):
+    # Strip and replace multiple spaces with single
+    id_str = re.sub(r'\s+', ' ', id_str.strip())
+    # Replace spaces with underscores
+    id_str = id_str.replace(' ', '_')
+    # Remove non-alphanumeric except underscores
+    id_str = re.sub(r'[^a-zA-Z0-9_]', '', id_str)
+    return id_str
 
 # Load entities
 with open(INPUT_ENTITIES_FILE, "r", encoding="utf-8") as f:
     entities = json.load(f)
 
-# Normalize entity IDs (just in case)
+# Normalize entity IDs
 for ent in entities:
-    ent["id"] = ent["id"].replace(" ", "_")
+    ent["id"] = clean_entity_id(ent["id"])
 
 # Save normalized entities to KB
 with open(os.path.join(OUTPUT_DIR, "entities.json"), "w", encoding="utf-8") as f:
