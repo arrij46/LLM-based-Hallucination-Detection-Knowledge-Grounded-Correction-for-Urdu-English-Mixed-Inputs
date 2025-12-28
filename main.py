@@ -82,6 +82,8 @@ def run_pipeline(user_query: str) -> Dict[str, Any]:
     # Transform Stage 3 output to Stage 4 expected format
     # Stage 4 expects a list of dicts: [{"text": "...", "source": "...", "date": "YYYY"}, ...]
     retrieved_docs = []
+    detected_entity = None
+    
     if isinstance(retrieved_docs_raw, dict):
         # Single doc returned
         retrieved_docs.append({
@@ -89,6 +91,7 @@ def run_pipeline(user_query: str) -> Dict[str, Any]:
             "source": retrieved_docs_raw.get("linked_kb_id", "unknown"),
             "date": retrieved_docs_raw.get("date", "unknown")
         })
+        detected_entity = retrieved_docs_raw.get("entity")
     elif isinstance(retrieved_docs_raw, list):
         # Multiple docs returned
         for doc in retrieved_docs_raw:
@@ -97,6 +100,8 @@ def run_pipeline(user_query: str) -> Dict[str, Any]:
                 "source": doc.get("linked_kb_id", "unknown"),
                 "date": doc.get("date", "unknown")
             })
+        if retrieved_docs_raw and isinstance(retrieved_docs_raw[0], dict):
+            detected_entity = retrieved_docs_raw[0].get("entity")
 
     pipeline_trace["stage3_retrieval"] = retrieved_docs
 
@@ -104,7 +109,8 @@ def run_pipeline(user_query: str) -> Dict[str, Any]:
     print("Running Stage 4: Fact Verification...")
     verification_result = verify_fact(
         query=user_query,
-        retrieved_docs=retrieved_docs
+        retrieved_docs=retrieved_docs,
+        entity=detected_entity
     )
     print("Stage 4 Verification Output:", verification_result)
     pipeline_trace["stage4_verification"] = verification_result
@@ -128,12 +134,25 @@ def run_pipeline(user_query: str) -> Dict[str, Any]:
     pipeline_trace["stage6_validation"] = stage6_results
 
     # Final answer preparation
+    # Use verified fact if final_text is empty or placeholder
+    final_text = stage6_results[0]["final_text"]
+    if not final_text or final_text == "No verified fact available" or final_text.strip() == "":
+        # Fallback to verified fact from Stage 4
+        verified_fact = verification_result.get("verified_fact")
+        if verified_fact and verified_fact != "No verified fact available":
+            final_text = verified_fact
+        elif stage5_output.get("corrected_text"):
+            final_text = stage5_output.get("corrected_text")
+        else:
+            # Last resort: use original response
+            final_text = detection_result.get("responses", [""])[0] if detection_result.get("responses") else "No answer available"
+    
     final_answer = {
-        "text": stage6_results[0]["final_text"],
-        "confidence": stage6_results[0]["validation"]["overall_score"],
-        "sources": stage5_output.get("sources", []),
+        "text": final_text,
+        "confidence": stage6_results[0]["validation"]["overall_score"] if stage6_results else verification_result.get("confidence", 0.0),
+        "sources": verification_result.get("sources", stage5_output.get("sources", [])),
         "hallucination_detected": detection_result.get("hallucination_detected", False),
-        "refinement_applied": stage6_results[0]["metadata"]["refinement_applied"]
+        "refinement_applied": stage6_results[0]["metadata"]["refinement_applied"] if stage6_results else False
     }
 
     return {
@@ -147,16 +166,51 @@ def run_pipeline(user_query: str) -> Dict[str, Any]:
 # ----------------------------------------------------
 if __name__ == "__main__":
 
-    print("=== Hallucination Mitigation Pipeline ===\n")
+    print("=" * 70)
+    print(" Hallucination Detection & Knowledge-Grounded Correction Pipeline")
+    print("Type 'quit' to exit at any time.")
+    print("=" * 70)
 
-    user_query = input("User Query: ").strip()
+    while True:
+        print("\n" + "-" * 50)
+        user_query = input("Enter your query: ").strip()
 
-    result = run_pipeline(user_query)
+        if user_query.lower() == "quit":
+            print("\n Exiting pipeline. Thank you!")
+            break
 
-    print("\n--- Final Answer ---")
-    print(result["final_answer"])
+        if not user_query:
+            print("  Query cannot be empty. Please try again.")
+            continue
 
-    print("\n--- Pipeline Trace (Debug) ---")
-    for stage, output in result["pipeline_trace"].items():
-        print(f"\n[{stage}]")
-        print(output)
+        print("\n Running pipeline...\n")
+
+        try:
+            result = run_pipeline(user_query)
+
+            # ---------------- Final Answer ----------------
+            print(" FINAL ANSWER")
+            print("-" * 30)
+            final = result.get("final_answer", {})
+            print(f" Text       : {final.get('text', 'N/A')}")
+            print(f" Confidence : {final.get('confidence', 0):.2f}")
+            print(f" Hallucinated: {final.get('hallucination_detected', False)}")
+
+            if final.get("sources"):
+                print(" Sources:")
+                for src in final["sources"]:
+                    print(f"   • {src}")
+
+            # ---------------- Debug Trace ----------------
+            print("\n PIPELINE TRACE (DEBUG)")
+            print("-" * 30)
+
+            for stage, output in result.get("pipeline_trace", {}).items():
+                print(f"\n[{stage.upper()}]")
+                print(output)
+
+        except Exception as e:
+            print("\n Pipeline execution failed")
+            print(f"Error: {e}")
+
+        print("\n" + "=" * 70)

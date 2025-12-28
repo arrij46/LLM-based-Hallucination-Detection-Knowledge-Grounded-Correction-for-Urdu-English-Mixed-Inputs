@@ -8,8 +8,8 @@ from transformers import pipeline
 # ----------------------------
 # Paths
 # ----------------------------
-KB_DIR = "./knowledge_base/entities"
-EMBEDDING_DIR="./knowledge_base/entities/embeddings"
+KB_DIR = "knowledge_base/entities"
+EMBEDDING_DIR="knowledge_base/entities/embeddings"
 TRIPLES_FILE = os.path.join(KB_DIR, "triples.json")
 ENTITIES_FILE = os.path.join(KB_DIR, "entities.json")
 EMBEDDINGS_FILE = os.path.join(EMBEDDING_DIR, "triple_embeddings.pt")
@@ -97,9 +97,9 @@ entity_id_to_index = {e["id"]: i for i, e in enumerate(entities)}
 # ----------------------------
 # Load multilingual embedding model (offline)
 # ----------------------------
-MODEL_PATH = r"C:\Users\MyPC\.cache\huggingface\hub\models--sentence-transformers--distiluse-base-multilingual-cased-v2\snapshots\bfe45d0732ca50787611c0fe107ba278c7f3f889"
-model = SentenceTransformer(MODEL_PATH)
-# model=SentenceTransformer("distiluse-base-multilingual-cased-v2")
+#MODEL_PATH = r"C:\Users\MyPC\.cache\huggingface\hub\models--sentence-transformers--distiluse-base-multilingual-cased-v2\snapshots\bfe45d0732ca50787611c0fe107ba278c7f3f889"
+#model = SentenceTransformer(MODEL_PATH)
+model=SentenceTransformer("distiluse-base-multilingual-cased-v2")
 
 # Load QA pipeline for extractive QA
 qa_pipeline = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")

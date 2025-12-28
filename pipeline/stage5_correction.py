@@ -107,11 +107,18 @@ class HallucinationCorrector:
         else:
             # Fallback if Stage 4 not available
             verification_result = {
-                "verified_fact": "No verification available",
+                "status": "insufficient_evidence",
+                "verified_fact": None,
                 "confidence": 0.5,
                 "sources": [],
+                "reason": "Stage 4 not available",
                 "correction_candidates": []
             }
+        
+        # Handle None verified_fact (when verification fails)
+        verified_fact = verification_result.get("verified_fact")
+        if verified_fact is None:
+            verified_fact = "No verified fact available"
         
         # Prepare input for Stage 5
         stage5_input = {
@@ -121,10 +128,10 @@ class HallucinationCorrector:
             "hallucinated_response": hallucinated_response,
             "hallucination_detected": hallucination_detected,
             "entropy_score": entropy_score,
-            "verified_fact": verification_result["verified_fact"],
-            "verification_confidence": verification_result["confidence"],
-            "correction_candidates": verification_result["correction_candidates"],
-            "sources": verification_result["sources"],
+            "verified_fact": verified_fact,
+            "verification_confidence": verification_result.get("confidence", 0.0),
+            "correction_candidates": verification_result.get("correction_candidates", []),
+            "sources": verification_result.get("sources", []),
             "hallucination_type": self._detect_error_type(hallucinated_response),
             "error_span": self._identify_error_span(hallucinated_response)
         }
