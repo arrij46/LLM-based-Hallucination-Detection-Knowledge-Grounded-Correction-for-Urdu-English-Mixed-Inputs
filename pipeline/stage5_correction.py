@@ -1,459 +1,309 @@
 """
-Stage 5: Hallucination Correction Pipeline - INTEGRATED VERSION
-Connects with Stage 4 (Arrij) output
-Owner: Rimsha Azam (22i-1129)
+Stage 5: Hallucination Correction Pipeline (FIXED - Threshold 0.40)
+Owner: Rimsha Azam
+
+CRITICAL FIX: Lowered threshold from 0.50 to 0.40 to accept confidence like 0.495
 """
 
-import json
-import sys
 import os
-from pathlib import Path
-from typing import Dict, List
+import re
 
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-# Import Stage 4 verification
-try:
-    from pipeline.stage4_verification import verify_fact
-    STAGE4_AVAILABLE = True
-except ImportError:
-    print("⚠️  Stage 4 not found. Running in standalone mode.")
-    STAGE4_AVAILABLE = False
-
-# Import utilities
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'utils'))
-
-try:
-    from error_description import ErrorClassifier
-    from dpo_builder import DPOBuilder
-except ImportError:
-    print("Error: Cannot import utilities. Make sure error_description.py and dpo_builder.py are in utils/ folder")
-    sys.exit(1)
-
-# Import Groq
 try:
     from groq import Groq
     GROQ_AVAILABLE = True
 except ImportError:
-    print("⚠️  Groq not installed. Model-based correction will be disabled.")
-    print("   Install with: pip install groq")
     GROQ_AVAILABLE = False
+    print("⚠️ Groq library not installed. Using template mode only.")
+
+# Relative imports
+from .utils.error_description import ErrorClassifier
+from .utils.dpo_builder import DPOBuilder
+
+
+def validate_groq_key(client):
+    """Validate Groq API key"""
+    try:
+        client.chat.completions.create(
+            messages=[{"role": "user", "content": "test"}],
+            model="llama-3.3-70b-versatile",
+            max_tokens=5
+        )
+        return True
+    except Exception as e:
+        print(f"❌ Groq API validation failed: {e}")
+        return False
 
 
 class HallucinationCorrector:
-    """Main correction pipeline integrated with Stage 4"""
-    
-    def __init__(self, correction_method="template", groq_api_key=None):
-        """
-        Initialize corrector
-        
-        Args:
-            correction_method: 'template' (rule-based) or 'model' (LLM-based)
-            groq_api_key: Groq API key for model-based correction
-        """
+    """Corrects hallucinated responses using verified facts"""
+
+    def __init__(self, correction_method="template"):
         self.method = correction_method
         self.error_classifier = ErrorClassifier()
         self.dpo_builder = DPOBuilder()
         self.corrections = []
-        
-        # Initialize Groq client if using model-based correction
         self.groq_client = None
-        if self.method == "model" and GROQ_AVAILABLE and groq_api_key:
-            try:
-                self.groq_client = Groq(api_key=groq_api_key)
-                print("✅ Groq API initialized successfully!")
-            except Exception as e:
-                print(f"⚠️  Groq initialization failed: {e}")
-                print("   Falling back to template-based correction")
-                self.method = "template"
-        elif self.method == "model" and not groq_api_key:
-            print("⚠️  No API key provided. Using template-based correction.")
+
+        # Try to initialize Groq if method is "model"
+        if self.method == "model" and GROQ_AVAILABLE:
+            self._initialize_groq()
+        else:
+            if self.method == "model" and not GROQ_AVAILABLE:
+                print("⚠️ Groq not available. Falling back to TEMPLATE mode.")
             self.method = "template"
-    
-    def process_stage2_output(self, stage2_data: Dict, retrieved_docs: List[Dict] = None) -> Dict:
-        """
-        Process Stage 2 output through Stage 4 and Stage 5
-        
-        Args:
-            stage2_data: Output from Stage 2 (detection)
-            retrieved_docs: Retrieved documents from Stage 3 (optional)
-            
-        Returns:
-            Complete correction output
-        """
-        original_text = stage2_data.get("original_text")
-        normalized_text = stage2_data.get("normalized_text")
-        hallucination_detected = stage2_data.get("hallucination_detected", False)
-        entropy_score = stage2_data.get("entropy_score", 0)
-        responses = stage2_data.get("responses", [])
-        
-        # If no hallucination detected, return original
-        if not hallucination_detected:
-            return {
-                "original_query": original_text,
-                "hallucination_detected": False,
-                "corrected_text": responses[0] if responses else original_text,
-                "correction_method": "none",
-                "needs_correction": False
-            }
-        
-        # Get hallucinated response (first response from Stage 2)
-        hallucinated_response = responses[0] if responses else ""
-        
-        # Stage 4: Verify facts
-        if STAGE4_AVAILABLE and retrieved_docs:
-            verification_result = verify_fact(original_text, retrieved_docs)
-        else:
-            # Fallback if Stage 4 not available
-            verification_result = {
-                "status": "insufficient_evidence",
-                "verified_fact": None,
-                "confidence": 0.5,
-                "sources": [],
-                "reason": "Stage 4 not available",
-                "correction_candidates": []
-            }
-        
-        # Handle None verified_fact (when verification fails)
-        verified_fact = verification_result.get("verified_fact")
-        if verified_fact is None:
-            verified_fact = "No verified fact available"
-        
-        # Prepare input for Stage 5
-        stage5_input = {
-            "query_id": f"q_{hash(original_text) % 10000}",
-            "original_query": original_text,
-            "normalized_query": normalized_text,
-            "hallucinated_response": hallucinated_response,
-            "hallucination_detected": hallucination_detected,
-            "entropy_score": entropy_score,
-            "verified_fact": verified_fact,
-            "verification_confidence": verification_result.get("confidence", 0.0),
-            "correction_candidates": verification_result.get("correction_candidates", []),
-            "sources": verification_result.get("sources", []),
-            "hallucination_type": self._detect_error_type(hallucinated_response),
-            "error_span": self._identify_error_span(hallucinated_response)
-        }
-        
-        # Stage 5: Correct hallucination
-        corrected_output = self.correct_hallucination(stage5_input)
-        
-        return corrected_output
-    
-    def _detect_error_type(self, text: str) -> str:
-        """Auto-detect error type from hallucinated text"""
-        error_info = self.error_classifier.classify_error(text, None)
-        return error_info["type"]
-    
-    def _identify_error_span(self, text: str) -> Dict:
-        """Identify error span in text (simplified)"""
-        return {
-            "start": 0,
-            "end": len(text),
-            "text": text
-        }
-    
-    def correct_hallucination(self, input_data: Dict) -> Dict:
-        """
-        Main correction function
-        
-        Args:
-            input_data: Combined data from Stage 2, 3, 4
-            
-        Returns:
-            dict: Corrected output
-        """
-        query_id = input_data.get("query_id")
-        original_query = input_data.get("original_query")
-        hallucinated_response = input_data.get("hallucinated_response")
-        verified_fact = input_data.get("verified_fact")
-        error_span = input_data.get("error_span", {})
-        error_type = input_data.get("hallucination_type")
-        correction_candidates = input_data.get("correction_candidates", [])
-        
-        # Step 1: Classify error
-        error_info = self.error_classifier.classify_error(
-            error_span.get("text", ""), 
-            error_type
-        )
-        
-        # Step 2: Generate correction
-        if self.method == "template":
-            corrected_text = self._template_based_correction(
-                hallucinated_response,
-                error_span,
-                correction_candidates,
-                verified_fact
-            )
-        else:
-            corrected_text = self._model_based_correction(
-                original_query,
-                hallucinated_response,
-                verified_fact,
-                error_info["type"]
-            )
-        
-        # Step 3: Generate explanation
-        explanation = self.error_classifier.generate_explanation(
-            hallucinated_response,
-            corrected_text,
-            error_info["type"]
-        )
-        
-        # Step 4: Quality check
-        quality_passed = self._quality_check(corrected_text, verified_fact)
-        
-        # Step 5: Create DPO pair
-        self.dpo_builder.create_preference_pair(
-            query=original_query,
-            hallucinated_response=hallucinated_response,
-            corrected_response=corrected_text,
-            verified_fact=verified_fact,
-            error_type=error_info["type"]
-        )
-        
-        # Prepare output
-        output = {
-            "query_id": query_id,
-            "original_query": original_query,
-            "normalized_query": input_data.get("normalized_query", ""),
-            "hallucinated_response": hallucinated_response,
-            "corrected_text": corrected_text,
-            "hallucination_type": error_info["type"],
-            "correction_explanation": explanation,
-            "confidence_score": error_info["confidence"],
-            "verification_confidence": input_data.get("verification_confidence", 0),
-            "correction_method": self.method,
-            "quality_checks_passed": quality_passed,
-            "verified_fact": verified_fact,
-            "sources": input_data.get("sources", []),
-            "entropy_score": input_data.get("entropy_score", 0)
-        }
-        
-        self.corrections.append(output)
-        return output
-    
-    def _template_based_correction(self, hallucinated_text, error_span, 
-                                   candidates, verified_fact):
-        """Template-based correction using verified facts"""
-        # Use first correction candidate if available
-        if candidates and len(candidates) > 0:
-            return candidates[0]
-        
-        # Fallback: Use verified fact directly
-        return verified_fact
-    
-    def _model_based_correction(self, query, hallucinated_text, verified_fact, error_type):
-        """LLM-based correction using Groq API"""
-        if not self.groq_client:
-            return verified_fact
-        
-        # Build prompt for Groq
-        prompt = self._build_correction_prompt(
-            query, hallucinated_text, verified_fact, error_type
-        )
-        
-        try:
-            # Call Groq API
-            chat_completion = self.groq_client.chat.completions.create(
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are a hallucination correction system for Urdu-English code-mixed text. Fix factual errors while preserving the language mixing style and naturalness."
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                model="llama-3.3-70b-versatile",
-                temperature=0.3,
-                max_tokens=150,
-                top_p=0.9
-            )
-            
-            corrected = chat_completion.choices[0].message.content.strip()
-            corrected = corrected.replace('"', '').replace("'", "").strip()
-            
-            return corrected
-            
-        except Exception as e:
-            print(f"⚠️  Groq API error: {e}")
-            return verified_fact
-    
-    def _build_correction_prompt(self, query, hallucinated_text, verified_fact, error_type):
-        """Build effective prompt for Groq API"""
-        
-        prompt = f"""Fix the hallucination in this response while keeping the same language style (Urdu-English code-mixed).
+            print(f"[Stage 5] Using correction method: {self.method}")
 
-Original Question: {query}
-
-Hallucinated Response (WRONG): {hallucinated_text}
-
-Verified Fact: {verified_fact}
-
-Error Type: {error_type}
-
-Instructions:
-1. Rewrite the response to be factually correct using the verified fact
-2. Keep the same language mixing style (Urdu-English code-mixed)
-3. Keep it natural and conversational
-4. Only output the corrected response, nothing else
-
-Corrected Response:"""
+    def _initialize_groq(self):
+        """Initialize Groq API client"""
+        api_key = os.environ.get("GROQ_API_KEY")
         
-        return prompt
-    
-    def _quality_check(self, corrected_text, verified_fact):
-        """Basic quality validation"""
-        if not corrected_text or not verified_fact:
-            return False
-        
-        corrected_words = set(corrected_text.lower().split())
-        fact_words = set(verified_fact.lower().split())
-        
-        overlap = len(corrected_words & fact_words)
-        return overlap > 0
-    
-    def process_batch_from_stage2(self, stage2_file, output_file, retrieved_docs_map=None):
-        """
-        Process Stage 2 output file through complete pipeline
-        
-        Args:
-            stage2_file: Path to Stage 2 output JSON
-            output_file: Path to save Stage 5 output
-            retrieved_docs_map: Optional dict mapping queries to retrieved docs
-        """
-        print(f"📖 Reading Stage 2 output from: {stage2_file}")
-        
-        with open(stage2_file, 'r', encoding='utf-8') as f:
-            stage2_data = json.load(f)
-        
-        print(f"🔧 Processing {len(stage2_data)} queries...")
-        print(f"   Method: {self.method.upper()}")
-        print()
-        
-        results = []
-        for idx, item in enumerate(stage2_data):
-            try:
-                # Get retrieved docs if available
-                query = item.get("original_text")
-                retrieved_docs = retrieved_docs_map.get(query) if retrieved_docs_map else None
-                
-                # Process through pipeline
-                result = self.process_stage2_output(item, retrieved_docs)
-                results.append(result)
-                
-                status = "🔄" if not item.get("hallucination_detected") else "✅"
-                print(f"{status} Processed: {idx+1}/{len(stage2_data)} - {query[:50]}...")
-                
-            except Exception as e:
-                print(f"❌ Error processing query {idx+1}: {e}")
-        
-        # Save results
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(results, f, indent=2, ensure_ascii=False)
-        
-        print(f"\n💾 Saved {len(results)} results to: {output_file}")
-        
-        # Save DPO training data
-        dpo_file = output_file.replace(".json", "_dpo.jsonl")
-        self.dpo_builder.save_to_file(dpo_file)
-        
-        # Print statistics
-        self._print_statistics(results)
-        
-        return results
-    
-    def _print_statistics(self, results):
-        """Print correction statistics"""
-        print("\n" + "="*50)
-        print("📊 CORRECTION STATISTICS")
-        print("="*50)
-        
-        total = len(results)
-        
-        if total == 0:
-            print("No corrections processed")
-            print("="*50)
+        if not api_key:
+            print("⚠️ GROQ_API_KEY not found. Falling back to TEMPLATE mode.")
+            self.method = "template"
             return
         
-        hallucinations = sum(1 for r in results if r.get("hallucination_detected", True))
-        passed_quality = sum(1 for r in results if r.get("quality_checks_passed", False))
-        
-        error_types = {}
-        for r in results:
-            if r.get("hallucination_type"):
-                et = r["hallucination_type"]
-                error_types[et] = error_types.get(et, 0) + 1
-        
-        print(f"Total queries: {total}")
-        print(f"Hallucinations detected: {hallucinations}")
-        print(f"Corrections made: {hallucinations}")
-        print(f"Quality checks passed: {passed_quality}/{hallucinations} ({passed_quality/hallucinations*100 if hallucinations > 0 else 0:.1f}%)")
-        print(f"Correction method: {self.method.upper()}")
-        
-        if error_types:
-            print(f"\nError type distribution:")
-            for error_type, count in error_types.items():
-                print(f"  - {error_type}: {count}")
-        
-        dpo_stats = self.dpo_builder.get_statistics()
-        print(f"\nDPO training pairs created: {dpo_stats['total_pairs']}")
-        print("="*50)
+        try:
+            self.groq_client = Groq(api_key=api_key)
+            if validate_groq_key(self.groq_client):
+                print("✅ Groq API initialized successfully.")
+            else:
+                print("⚠️ Groq API validation failed. Falling back to TEMPLATE mode.")
+                self.method = "template"
+                self.groq_client = None
+        except Exception as e:
+            print(f"⚠️ Groq initialization failed: {e}. Falling back to TEMPLATE mode.")
+            self.method = "template"
+            self.groq_client = None
 
-
-def main():
-    """Main entry point"""
-    print("="*60)
-    print("🔧 STAGE 5: HALLUCINATION CORRECTION (INTEGRATED)")
-    print("="*60)
-    print()
-    
-    # Check for API key
-    groq_api_key = os.environ.get("GROQ_API_KEY")
-    
-    if not groq_api_key:
-        print("⚠️  GROQ_API_KEY not found in environment")
-        print("   Set it with: set GROQ_API_KEY=your_key_here  (Windows)")
-        print()
-        print("🔧 Running in TEMPLATE mode")
-        correction_method = "template"
-    else:
-        print("✅ GROQ_API_KEY found!")
-        print()
-        choice = input("Choose correction method:\n  1) Template-based\n  2) Model-based (Groq)\n\nEnter (1 or 2): ").strip()
+    def _abstain(self, input_data, reason):
+        """
+        Return abstention response
+        FIXED: Return verified_fact if available, not hallucinated response
+        """
+        # Try to return verified fact even when abstaining
+        verified_fact = input_data.get("verified_fact")
         
-        if choice == "2":
-            correction_method = "model"
-            print("\n🤖 Using MODEL-based correction")
+        if verified_fact and verified_fact != "No verified fact available":
+            corrected_text = verified_fact
         else:
-            correction_method = "template"
-            print("\n📋 Using TEMPLATE-based correction")
-    
-    print()
-    
-    # File paths
-    stage2_file = "data/stage2_output.json"
-    output_file = "data/stage5_output.json"
-    
-    if not os.path.exists(stage2_file):
-        print(f"❌ Error: {stage2_file} not found!")
-        print("   Make sure Stage 2 has run successfully")
-        return
-    
-    # Initialize corrector
-    corrector = HallucinationCorrector(
-        correction_method=correction_method,
-        groq_api_key=groq_api_key
-    )
-    
-    # Process corrections
-    results = corrector.process_batch_from_stage2(stage2_file, output_file)
-    
-    print(f"\n✅ Stage 5 Complete! Check {output_file} for results.")
+            corrected_text = input_data.get("hallucinated_response", "Unable to verify answer")
+        
+        return {
+            "query_id": input_data.get("query_id"),
+            "original_query": input_data.get("original_query"),
+            "hallucinated_response": input_data.get("hallucinated_response"),
+            "corrected_text": corrected_text,
+            "hallucination_type": "verification_error",
+            "correction_method": "abstained",
+            "reason": reason,
+            "quality_checks_passed": False,
+            "verified_fact": verified_fact
+        }
 
+    def _detect_language_mix(self, query):
+        """Detect if query uses Urdu-English code-mixing"""
+        urdu_words = ['ka', 'ki', 'ke', 'ko', 'se', 'mein', 'par', 
+                     'kon', 'kaun', 'kya', 'kab', 'kahan', 'kyun', 'kaise',
+                     'hai', 'hain', 'tha', 'the', 'thy', 'kitne', 'konsa']
+        
+        query_lower = query.lower()
+        return any(word in query_lower.split() for word in urdu_words)
 
-if __name__ == "__main__":
-    main()
+    def _is_complete_sentence(self, text):
+        """Check if text is already a complete sentence"""
+        text = text.strip()
+        
+        # Has proper ending punctuation
+        if text.endswith(('.', '!', '?', '।')):
+            return True
+        
+        # Has a verb (is, was, are, were, has, have)
+        if any(verb in text.lower().split() for verb in ['is', 'was', 'are', 'were', 'has', 'have', 'had']):
+            return True
+        
+        return False
+
+    def _template_based_correction(self, query, verified_fact):
+        """
+        Generate correction using templates.
+        FIXED: Smart detection of when to add "hai"
+        """
+        has_urdu = self._detect_language_mix(query)
+        fact_clean = verified_fact.strip()
+        
+        # CRITICAL FIX: If fact is already a complete English sentence, return as-is
+        if self._is_complete_sentence(fact_clean):
+            # Check if it already has "hai" at the end
+            if fact_clean.endswith(' hai.') or fact_clean.endswith(' hai'):
+                return fact_clean
+            
+            # If query has Urdu BUT fact is a long complete English sentence, DON'T add hai
+            if has_urdu and len(fact_clean.split()) > 8:
+                # Long English sentences look weird with "hai"
+                return fact_clean if fact_clean.endswith('.') else f"{fact_clean}."
+            
+            # Short fact + Urdu query = can add hai
+            if has_urdu and len(fact_clean.split()) <= 8:
+                # Check if fact is pure English (no Urdu words)
+                fact_lower = fact_clean.lower()
+                has_english_verb = any(verb in fact_lower.split() for verb in ['is', 'was', 'are', 'were'])
+                
+                if has_english_verb:
+                    # "Muhammad Iqbal is the national poet" → keep as-is (already has verb)
+                    return fact_clean if fact_clean.endswith('.') else f"{fact_clean}."
+            
+            # Default: return with period
+            return fact_clean if fact_clean.endswith('.') else f"{fact_clean}."
+        
+        # Incomplete sentence - add appropriate ending
+        if has_urdu:
+            return f"{fact_clean} hai."
+        else:
+            return f"{fact_clean}."
+
+    def _quality_check(self, corrected, verified_fact):
+        """Check if correction contains verified fact content"""
+        if not corrected or not verified_fact:
+            return False
+        
+        corrected_lower = corrected.lower()
+        fact_words = set(verified_fact.lower().split())
+        
+        # Remove common words
+        stop_words = {'the', 'is', 'are', 'was', 'were', 'a', 'an', 'and', 'or', 'but',
+                     'hai', 'hain', 'ka', 'ki', 'ke'}
+        fact_words -= stop_words
+        
+        # At least 50% of fact words should be in correction
+        matches = sum(1 for word in fact_words if word in corrected_lower)
+        return matches >= len(fact_words) * 0.5 if fact_words else True
+
+    def _model_output_guard(self, output, verified_fact):
+        """Verify model output contains verified fact"""
+        output_words = set(output.lower().split())
+        fact_words = set(verified_fact.lower().split())
+        
+        overlap = len(output_words & fact_words)
+        required = max(2, len(fact_words) // 2)
+        
+        return overlap >= required
+
+    def _model_based_correction(self, query, hallucinated, verified_fact):
+        """Use Groq API to generate correction"""
+        if not self.groq_client:
+            return None
+        
+        has_urdu = self._detect_language_mix(query)
+        
+        prompt = f"""Fix the incorrect answer using the verified fact.
+
+Question: {query}
+Incorrect Answer: {hallucinated}
+Verified Fact: {verified_fact}
+
+Instructions:
+1. Use the verified fact to correct the answer
+2. Keep the response natural and conversational
+{"3. Maintain Urdu-English code-mixed style" if has_urdu else "3. Use clear English"}
+4. Output ONLY the corrected answer
+
+Corrected Answer:"""
+
+        try:
+            response = self.groq_client.chat.completions.create(
+                model="llama-3.3-70b-versatile",
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.3,
+                max_tokens=150
+            )
+
+            corrected = response.choices[0].message.content.strip()
+            corrected = re.sub(r'^(Answer:|Corrected Answer:|Response:)\s*', '', corrected, flags=re.IGNORECASE)
+            corrected = corrected.strip()
+            
+            if not self._model_output_guard(corrected, verified_fact):
+                print("⚠️ Model output failed verification, using template.")
+                return None
+
+            return corrected
+
+        except Exception as e:
+            print(f"⚠️ Groq API error: {e}")
+            return None
+
+    def correct_hallucination(self, input_data):
+        """Main entry point for correction"""
+        
+        verified_fact = input_data.get("verified_fact")
+        verification_confidence = input_data.get("verification_confidence", 0.0)
+        hallucinated = input_data.get("hallucinated_response", "")
+        original_query = input_data.get("original_query", "")
+        
+        # Confidence check (LOWERED to 0.40 from 0.50)
+        # This accepts confidence like 0.495 which was being rejected
+        if not verified_fact or verified_fact == "No verified fact available":
+            return self._abstain(input_data, "No verified fact available")
+        
+        if verification_confidence < 0.40:
+            return self._abstain(input_data, f"Low verification confidence: {verification_confidence:.2f}")
+        
+        # Classify error
+        error_info = self.error_classifier.classify_error(
+            hallucinated,
+            input_data.get("hallucination_type", "factual_error")
+        )
+        
+        # Generate correction
+        corrected = None
+        
+        if self.method == "model":
+            corrected = self._model_based_correction(original_query, hallucinated, verified_fact)
+        
+        # Fallback to template
+        if corrected is None:
+            corrected = self._template_based_correction(original_query, verified_fact)
+        
+        # Quality check
+        quality_passed = self._quality_check(corrected, verified_fact)
+        
+        # Explanation
+        explanation = self.error_classifier.generate_explanation(
+            hallucinated, corrected, error_info["type"]
+        )
+        
+        # DPO pair (only if high quality)
+        if quality_passed and verification_confidence >= 0.70:
+            self.dpo_builder.create_preference_pair(
+                query=original_query,
+                hallucinated_response=hallucinated,
+                corrected_response=corrected,
+                verified_fact=verified_fact,
+                error_type=error_info["type"],
+                verification_confidence=verification_confidence,
+                quality_passed=quality_passed
+            )
+        
+        return {
+            "query_id": input_data.get("query_id"),
+            "original_query": original_query,
+            "hallucinated_response": hallucinated,
+            "corrected_text": corrected,
+            "hallucination_type": error_info["type"],
+            "correction_explanation": explanation,
+            "verification_confidence": verification_confidence,
+            "quality_checks_passed": quality_passed,
+            "correction_method": self.method,
+            "verified_fact": verified_fact
+        }
+
+    def save_dpo_data(self, output_path=None):
+        """Save DPO training data"""
+        return self.dpo_builder.save_to_file(output_path)
+
+    def get_statistics(self):
+        """Get statistics"""
+        return {
+            "total_corrections": len(self.corrections),
+            "dpo_pairs": self.dpo_builder.get_statistics()["total_pairs"],
+            "correction_method": self.method
+        }
