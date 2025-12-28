@@ -1,8 +1,8 @@
-"""
-Stage 5: Hallucination Correction Pipeline (FIXED - Threshold 0.40)
-Owner: Rimsha Azam
+# stage5_correction.py - IMPROVED
 
-CRITICAL FIX: Lowered threshold from 0.50 to 0.40 to accept confidence like 0.495
+"""
+Stage 5: Hallucination Correction Pipeline
+IMPROVED: Better Groq prompting for concise, natural responses
 """
 
 import os
@@ -13,11 +13,9 @@ try:
     GROQ_AVAILABLE = True
 except ImportError:
     GROQ_AVAILABLE = False
-    print("⚠️ Groq library not installed. Using template mode only.")
 
-# Relative imports
-from .utils.error_description import ErrorClassifier
-from .utils.dpo_builder import DPOBuilder
+from pipeline.utils.error_description import ErrorClassifier
+from pipeline.utils.dpo_builder import DPOBuilder
 
 
 def validate_groq_key(client):
@@ -30,7 +28,6 @@ def validate_groq_key(client):
         )
         return True
     except Exception as e:
-        print(f"❌ Groq API validation failed: {e}")
         return False
 
 
@@ -44,21 +41,16 @@ class HallucinationCorrector:
         self.corrections = []
         self.groq_client = None
 
-        # Try to initialize Groq if method is "model"
         if self.method == "model" and GROQ_AVAILABLE:
             self._initialize_groq()
         else:
-            if self.method == "model" and not GROQ_AVAILABLE:
-                print("⚠️ Groq not available. Falling back to TEMPLATE mode.")
             self.method = "template"
-            print(f"[Stage 5] Using correction method: {self.method}")
 
     def _initialize_groq(self):
         """Initialize Groq API client"""
         api_key = os.environ.get("GROQ_API_KEY")
         
         if not api_key:
-            print("⚠️ GROQ_API_KEY not found. Falling back to TEMPLATE mode.")
             self.method = "template"
             return
         
@@ -67,20 +59,14 @@ class HallucinationCorrector:
             if validate_groq_key(self.groq_client):
                 print("✅ Groq API initialized successfully.")
             else:
-                print("⚠️ Groq API validation failed. Falling back to TEMPLATE mode.")
                 self.method = "template"
                 self.groq_client = None
         except Exception as e:
-            print(f"⚠️ Groq initialization failed: {e}. Falling back to TEMPLATE mode.")
             self.method = "template"
             self.groq_client = None
 
     def _abstain(self, input_data, reason):
-        """
-        Return abstention response
-        FIXED: Return verified_fact if available, not hallucinated response
-        """
-        # Try to return verified fact even when abstaining
+        """Return abstention response"""
         verified_fact = input_data.get("verified_fact")
         
         if verified_fact and verified_fact != "No verified fact available":
@@ -95,9 +81,11 @@ class HallucinationCorrector:
             "corrected_text": corrected_text,
             "hallucination_type": "verification_error",
             "correction_method": "abstained",
+            "correction_explanation": reason,
             "reason": reason,
             "quality_checks_passed": False,
-            "verified_fact": verified_fact
+            "verified_fact": verified_fact,
+            "verification_confidence": input_data.get("verification_confidence", 0.0)
         }
 
     def _detect_language_mix(self, query):
@@ -109,57 +97,16 @@ class HallucinationCorrector:
         query_lower = query.lower()
         return any(word in query_lower.split() for word in urdu_words)
 
-    def _is_complete_sentence(self, text):
-        """Check if text is already a complete sentence"""
-        text = text.strip()
-        
-        # Has proper ending punctuation
-        if text.endswith(('.', '!', '?', '।')):
-            return True
-        
-        # Has a verb (is, was, are, were, has, have)
-        if any(verb in text.lower().split() for verb in ['is', 'was', 'are', 'were', 'has', 'have', 'had']):
-            return True
-        
-        return False
-
     def _template_based_correction(self, query, verified_fact):
-        """
-        Generate correction using templates.
-        FIXED: Smart detection of when to add "hai"
-        """
-        has_urdu = self._detect_language_mix(query)
+        """Generate correction using templates"""
         fact_clean = verified_fact.strip()
         
-        # CRITICAL FIX: If fact is already a complete English sentence, return as-is
-        if self._is_complete_sentence(fact_clean):
-            # Check if it already has "hai" at the end
-            if fact_clean.endswith(' hai.') or fact_clean.endswith(' hai'):
-                return fact_clean
-            
-            # If query has Urdu BUT fact is a long complete English sentence, DON'T add hai
-            if has_urdu and len(fact_clean.split()) > 8:
-                # Long English sentences look weird with "hai"
-                return fact_clean if fact_clean.endswith('.') else f"{fact_clean}."
-            
-            # Short fact + Urdu query = can add hai
-            if has_urdu and len(fact_clean.split()) <= 8:
-                # Check if fact is pure English (no Urdu words)
-                fact_lower = fact_clean.lower()
-                has_english_verb = any(verb in fact_lower.split() for verb in ['is', 'was', 'are', 'were'])
-                
-                if has_english_verb:
-                    # "Muhammad Iqbal is the national poet" → keep as-is (already has verb)
-                    return fact_clean if fact_clean.endswith('.') else f"{fact_clean}."
-            
-            # Default: return with period
-            return fact_clean if fact_clean.endswith('.') else f"{fact_clean}."
+        # If fact ends with period, return as-is
+        if fact_clean.endswith('.'):
+            return fact_clean
         
-        # Incomplete sentence - add appropriate ending
-        if has_urdu:
-            return f"{fact_clean} hai."
-        else:
-            return f"{fact_clean}."
+        # Otherwise add period
+        return f"{fact_clean}."
 
     def _quality_check(self, corrected, verified_fact):
         """Check if correction contains verified fact content"""
@@ -189,46 +136,74 @@ class HallucinationCorrector:
         return overlap >= required
 
     def _model_based_correction(self, query, hallucinated, verified_fact):
-        """Use Groq API to generate correction"""
+        """
+        Use Groq API to generate correction.
+        IMPROVED: Better prompt for concise, natural responses.
+        """
         if not self.groq_client:
             return None
         
         has_urdu = self._detect_language_mix(query)
         
-        prompt = f"""Fix the incorrect answer using the verified fact.
-
-Question: {query}
+        # IMPROVED PROMPT for concise responses
+        if has_urdu:
+            prompt = f"""Question: {query}
 Incorrect Answer: {hallucinated}
 Verified Fact: {verified_fact}
 
-Instructions:
-1. Use the verified fact to correct the answer
-2. Keep the response natural and conversational
-{"3. Maintain Urdu-English code-mixed style" if has_urdu else "3. Use clear English"}
-4. Output ONLY the corrected answer
+Task: Provide a SHORT, natural answer in Urdu-English mixed style that corrects the error using the verified fact.
+Requirements:
+- Maximum 2 sentences
+- Use simple, conversational language
+- Mix Urdu and English naturally (like "Pakistan ke 4 provinces hain")
+- DO NOT add unnecessary explanation or context
+- DO NOT say things like "na ki" or "bilkul galat hai"
+- Just state the correct fact naturally
 
-Corrected Answer:"""
+Answer:"""
+        else:
+            prompt = f"""Question: {query}
+Incorrect Answer: {hallucinated}
+Verified Fact: {verified_fact}
+
+Task: Provide a SHORT, natural answer that corrects the error.
+Requirements:
+- Maximum 2 sentences
+- Use simple, clear language
+- DO NOT add unnecessary explanation
+- Just state the correct fact
+
+Answer:"""
 
         try:
             response = self.groq_client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
                 messages=[{"role": "user", "content": prompt}],
-                temperature=0.3,
-                max_tokens=150
+                temperature=0.2,  # Lower temperature for more focused responses
+                max_tokens=100,    # Reduced from 150 to encourage brevity
+                top_p=0.9
             )
 
             corrected = response.choices[0].message.content.strip()
-            corrected = re.sub(r'^(Answer:|Corrected Answer:|Response:)\s*', '', corrected, flags=re.IGNORECASE)
+            
+            # Clean up common prefixes
+            prefixes_to_remove = [
+                r'^(Answer:|Corrected Answer:|Response:|Here is the corrected answer:)\s*',
+                r'^(Yeh|Toh|Actually|In fact)\s*',
+            ]
+            
+            for prefix_pattern in prefixes_to_remove:
+                corrected = re.sub(prefix_pattern, '', corrected, flags=re.IGNORECASE)
+            
             corrected = corrected.strip()
             
+            # Verify output contains the verified fact
             if not self._model_output_guard(corrected, verified_fact):
-                print("⚠️ Model output failed verification, using template.")
                 return None
 
             return corrected
 
         except Exception as e:
-            print(f"⚠️ Groq API error: {e}")
             return None
 
     def correct_hallucination(self, input_data):
@@ -239,8 +214,7 @@ Corrected Answer:"""
         hallucinated = input_data.get("hallucinated_response", "")
         original_query = input_data.get("original_query", "")
         
-        # Confidence check (LOWERED to 0.40 from 0.50)
-        # This accepts confidence like 0.495 which was being rejected
+        # Confidence check (threshold 0.40)
         if not verified_fact or verified_fact == "No verified fact available":
             return self._abstain(input_data, "No verified fact available")
         

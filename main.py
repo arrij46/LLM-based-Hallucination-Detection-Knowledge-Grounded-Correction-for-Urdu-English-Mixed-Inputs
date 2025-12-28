@@ -2,7 +2,7 @@
 
 """
 Main pipeline runner for the hallucination detection & correction system.
-FINAL VERSION: Clean, professional console output
+IMPROVED: Shows Stage 2 responses, controls Groq verbosity
 """
 
 from typing import Dict, Any
@@ -50,6 +50,28 @@ def print_metric(label: str, value: Any, indent: int = 2):
         if len(value_str) > 70:
             value_str = value_str[:67] + "..."
         print(f"{spaces}✓ {label}: {value_str}")
+
+
+def print_box(title: str, content: str, width: int = 70):
+    """Print content in a box"""
+    print(f"\n  ┌{'─' * (width - 4)}┐")
+    print(f"  │ {title:<{width - 6}} │")
+    print(f"  ├{'─' * (width - 4)}┤")
+    
+    # Wrap content
+    words = content.split()
+    line = "  │ "
+    for word in words:
+        if len(line) + len(word) + 1 > width - 3:
+            print(f"{line:<{width - 1}}│")
+            line = "  │ " + word
+        else:
+            line += (" " if len(line) > 4 else "") + word
+    
+    if line.strip() != "│":
+        print(f"{line:<{width - 1}}│")
+    
+    print(f"  └{'─' * (width - 4)}┘")
 
 
 def print_success(message: str):
@@ -140,6 +162,14 @@ def run_pipeline(user_query: str, verbose: bool = True) -> Dict[str, Any]:
         print_metric("Responses Generated", len(detection_result.get('responses', [])))
         print_metric("Entropy Score", entropy_score)
         print_metric("Hallucination Detected", hallucination_detected)
+        
+        # Show the first response (the one that might be hallucinated)
+        responses = detection_result.get('responses', [])
+        if responses and hallucination_detected:
+            first_response = responses[0]
+            if len(first_response) > 60:
+                first_response = first_response[:57] + "..."
+            print_box("Generated Response (Potentially Hallucinated)", first_response)
 
     # Early exit if no hallucination
     if not hallucination_detected:
@@ -234,6 +264,7 @@ def run_pipeline(user_query: str, verbose: bool = True) -> Dict[str, Any]:
     if verbose:
         corrected_text = stage5_output.get("corrected_text", "")
         if corrected_text:
+            # Show first 60 chars in metrics
             print_metric("Corrected Text", corrected_text[:60])
         print_metric("Quality Checks", stage5_output.get("quality_checks_passed", False))
         print_metric("Method Used", stage5_output.get("correction_method", "unknown"))
@@ -301,7 +332,8 @@ def run_pipeline(user_query: str, verbose: bool = True) -> Dict[str, Any]:
         "sources": verification_result.get("sources", []),
         "hallucination_detected": True,
         "refinement_applied": refinement_applied,
-        "status": "Corrected and validated"
+        "status": "Corrected and validated",
+        "original_response": detection_result["responses"][0]  # Add for comparison
     }
 
     return {
@@ -335,7 +367,7 @@ def main():
 
             # Handle commands
             if user_query.lower() in ["quit", "exit"]:
-                print("\n👋 Thank you for using the pipeline. \n<< END >>\n")
+                print("\n👋 Thank you for using the pipeline. Goodbye!\n")
                 break
 
             if user_query.lower() == "help":
@@ -372,8 +404,26 @@ def main():
             else:
                 final = result["final_answer"]
                 
-                # Answer text
-                print(f"\n  📄 Answer:")
+                # Show original vs corrected (if hallucination was detected)
+                if final.get("original_response") and final["hallucination_detected"]:
+                    print("\n  ❌ Original (Hallucinated):")
+                    orig = final["original_response"]
+                    if len(orig) > 65:
+                        words = orig.split()
+                        line = "     "
+                        for word in words:
+                            if len(line) + len(word) + 1 > 70:
+                                print(line)
+                                line = "     " + word
+                            else:
+                                line += (" " if line.strip() else "") + word
+                        if line.strip():
+                            print(line)
+                    else:
+                        print(f"     {orig}")
+                
+                # Corrected answer
+                print(f"\n  ✅ Corrected Answer:")
                 answer_text = final['text']
                 # Word wrap for long answers
                 if len(answer_text) > 65:
@@ -392,7 +442,6 @@ def main():
                 
                 # Metrics
                 print(f"\n  📊 Confidence: {final['confidence']:.2%}")
-                print(f"  🔍 Hallucination: {'Detected' if final['hallucination_detected'] else 'Not detected'}")
                 print(f"  ✅ Status: {final.get('status', 'Processed')}")
                 
                 if final.get("refinement_applied"):
@@ -407,7 +456,7 @@ def main():
             print("\n" + "═" * 70)
 
         except KeyboardInterrupt:
-            print("\n\n👋 Interrupted. \n<< END >>\n")
+            print("\n\n👋 Interrupted. Goodbye!\n")
             break
             
         except Exception as e:
