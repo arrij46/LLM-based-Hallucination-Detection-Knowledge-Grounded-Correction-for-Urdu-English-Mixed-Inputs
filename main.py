@@ -25,7 +25,7 @@ from pipeline.stage6_validation import validate_stage5_output, generate_validati
 # ----------------------------------------------------
 # Pipeline Runner
 # ----------------------------------------------------
-def run_pipeline(user_query: str, model_response: str) -> Dict[str, Any]:
+def run_pipeline(user_query: str) -> Dict[str, Any]:
     """
     Runs the complete hallucination detection and correction pipeline.
 
@@ -72,14 +72,32 @@ def run_pipeline(user_query: str, model_response: str) -> Dict[str, Any]:
             "pipeline_trace": pipeline_trace
         }
 
-
     # ---------------- Stage 3 ----------------
     print("Running Stage 3: Knowledge Retrieval...")
-    retrieved_docs = retrieve_facts(
-        query=user_query,
-        response=model_response
+    retrieved_docs_raw = retrieve_facts(
+        query=user_query, top_k=5
     )
-    print("Stage 3 Retrieval Output:", retrieved_docs)
+    print("Stage 3 Retrieval Output:", retrieved_docs_raw)
+
+    # Transform Stage 3 output to Stage 4 expected format
+    # Stage 4 expects a list of dicts: [{"text": "...", "source": "...", "date": "YYYY"}, ...]
+    retrieved_docs = []
+    if isinstance(retrieved_docs_raw, dict):
+        # Single doc returned
+        retrieved_docs.append({
+            "text": retrieved_docs_raw.get("extracted_answer", ""),
+            "source": retrieved_docs_raw.get("linked_kb_id", "unknown"),
+            "date": retrieved_docs_raw.get("date", "unknown")
+        })
+    elif isinstance(retrieved_docs_raw, list):
+        # Multiple docs returned
+        for doc in retrieved_docs_raw:
+            retrieved_docs.append({
+                "text": doc.get("extracted_answer", ""),
+                "source": doc.get("linked_kb_id", "unknown"),
+                "date": doc.get("date", "unknown")
+            })
+
     pipeline_trace["stage3_retrieval"] = retrieved_docs
 
     # ---------------- Stage 4 ----------------
@@ -90,6 +108,7 @@ def run_pipeline(user_query: str, model_response: str) -> Dict[str, Any]:
     )
     print("Stage 4 Verification Output:", verification_result)
     pipeline_trace["stage4_verification"] = verification_result
+
 
     # ---------------- Stage 5 ----------------
     print("Running Stage 5: Correction Generation...")
@@ -131,10 +150,8 @@ if __name__ == "__main__":
     print("=== Hallucination Mitigation Pipeline ===\n")
 
     user_query = input("User Query: ").strip()
-    
-    model_response = input("Model Response: ").strip()
 
-    result = run_pipeline(user_query, model_response)
+    result = run_pipeline(user_query)
 
     print("\n--- Final Answer ---")
     print(result["final_answer"])

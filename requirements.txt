@@ -1,0 +1,40 @@
+wbdata
+wikipedia
+
+# Core ML / NLP
+torch>=1.12.0
+transformers>=4.30.0
+sentence-transformers>=2.2.0
+sentencepiece
+
+# Data handling & utilities
+numpy>=1.23.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+tqdm>=4.60.0
+jsonlines
+
+# Web / scraping
+requests>=2.25.0
+beautifulsoup4>=4.9.0
+
+# Visualization / analysis
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Graph embedding / KG
+pykeen>=1.8.0
+
+# Text processing
+nltk>=3.6.0
+spacy>=3.5.0
+
+# Optional / system-specific
+# faiss-cpu: recommended for fast similarity search; on Windows prefer installing via conda
+faiss-cpu
+# groq: if used by your environment (stage5 references `groq`)
+groq
+
+# Notes:
+# - For GPU-enabled Torch install, replace the `torch` line with a CUDA build from https://pytorch.org
+# - Some packages (faiss-cpu, torch) may be easier to install via conda on Windows.

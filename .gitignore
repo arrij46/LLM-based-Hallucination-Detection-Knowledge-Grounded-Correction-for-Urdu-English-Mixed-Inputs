@@ -1,3 +1,5 @@
 pipeline/__pycache__/
 data/__pycache__/
 pipeline/utils/__pycache__/
+knowledge_base/entities/transe_model/
+knowledge_base/entities/embeddings/
